@@ -34,7 +34,7 @@ public class HelloWorldApplicationTest {
     @BeforeClass
     public static void startEureka() {
         eurekaServer = SpringApplication.run(EurekaServer.class,
-                "--server.port=8762",
+                "--server.port=8761",
                 "--eureka.instance.leaseRenewalIntervalInSeconds=1");
     }
 
@@ -54,10 +54,10 @@ public class HelloWorldApplicationTest {
         // registration has to take place...
         Thread.sleep(5000);
 
-        ResponseEntity<String> response = this.testRestTemplate.getForEntity("http://localhost:" + this.port + "/service-instances/helloword-service", String.class);
+        ResponseEntity<String> response = this.testRestTemplate.getForEntity("http://localhost:" + this.port + "/service-instances/helloworld-service", String.class);
 
         assertEquals(response.getStatusCode(), HttpStatus.OK);
-        assertTrue(response.getBody().contains("helloword-service"));
+        assertTrue(response.getBody().contains("helloworld-service"));
     }
 
 }
