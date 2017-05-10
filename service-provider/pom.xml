@@ -9,9 +9,9 @@
   </parent>
 
   <groupId>spring.cloud.learn</groupId>
-  <artifactId>helloworld-service</artifactId>
+  <artifactId>service-provider</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>helloworld-service</name>
+  <name>service-provider</name>
 
   <dependencies>
     <dependency>

@@ -14,9 +14,9 @@ import java.util.List;
 
 @EnableEurekaClient
 @SpringBootApplication
-public class HelloWorldApplication {
+public class ServiceProviderApplication {
     public static void main(String[] args) {
-        SpringApplication.run(HelloWorldApplication.class, args);
+        SpringApplication.run(ServiceProviderApplication.class, args);
     }
 }
 

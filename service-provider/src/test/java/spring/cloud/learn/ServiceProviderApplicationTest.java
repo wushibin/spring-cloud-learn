@@ -21,8 +21,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = HelloWorldApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class HelloWorldApplicationTest {
+@SpringBootTest(classes = ServiceProviderApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+public class ServiceProviderApplicationTest {
     @Configuration
     @EnableAutoConfiguration
     @EnableEurekaServer
@@ -54,10 +54,12 @@ public class HelloWorldApplicationTest {
         // registration has to take place...
         Thread.sleep(5000);
 
-        ResponseEntity<String> response = this.testRestTemplate.getForEntity("http://localhost:" + this.port + "/service-instances/helloworld-service", String.class);
+        final String serviceName = "service-provider";
+
+        ResponseEntity<String> response = this.testRestTemplate.getForEntity("http://localhost:" + this.port + "/service-instances/" + serviceName, String.class);
 
         assertEquals(response.getStatusCode(), HttpStatus.OK);
-        assertTrue(response.getBody().contains("helloworld-service"));
+        assertTrue(response.getBody().contains(serviceName));
     }
 
 }

@@ -27,7 +27,7 @@
     <modules>
     <module>eureka-server</module>
     <module>config-server</module>
-    <module>helloworld-service</module>
+    <module>service-provider</module>
   </modules>
 
     <dependencyManagement>
