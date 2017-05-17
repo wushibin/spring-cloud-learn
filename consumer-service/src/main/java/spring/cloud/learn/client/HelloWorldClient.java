@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Using Feign to invoke Helloworld service.
  */
 
-@FeignClient("SERVICE-PROVIDER")
+@FeignClient("provider-service")
 public interface HelloWorldClient {
     @RequestMapping(method = RequestMethod.GET, value = "/helloworld")
     String helloWorld();
