@@ -28,6 +28,7 @@
     <module>eureka-server</module>
     <module>config-server</module>
     <module>service-provider</module>
+    <module>service-consumer</module>
   </modules>
 
     <dependencyManagement>

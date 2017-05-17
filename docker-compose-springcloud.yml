@@ -1,0 +1,22 @@
+version: "2"
+
+services:
+  config-server:
+    image: springcloud/config-server:latest
+    hostname: config-server
+    ports:
+      - "8888:8888"
+    networks:
+      - cloud
+
+  eureka-server:
+    image: springcloud/eureka-server:latest
+    hostname: eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - cloud
+
+networks:
+  cloud:
+    driver: bridge
